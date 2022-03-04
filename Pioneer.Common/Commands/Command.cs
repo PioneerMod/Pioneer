@@ -1,4 +1,6 @@
-﻿namespace Pioneer.Common.Commands;
+﻿using System;
+
+namespace Pioneer.Common.Commands;
 
 /// <summary>
 /// Defines the class or method as command holder. If the underlying member is a class, every command in that class
@@ -32,5 +34,13 @@ public class Command : Attribute
 
     public Command() : this(Index)
     {
+    }
+
+    /// <summary>
+    /// Creates a new registry and returns it (it won't be cached internally).
+    /// </summary>
+    public static ICommandRegistry CreateRegistry()
+    {
+        return new CommandRegistry();
     }
 }

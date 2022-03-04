@@ -1,5 +1,4 @@
 ﻿using System.Globalization;
-using System.Runtime.InteropServices;
 using Nett;
 using Pioneer.Common.Logging;
 using Pioneer.Net;
@@ -22,15 +21,8 @@ internal static class Program
         Console.Title = $"Pioneer Server (c) 2022-{DateTime.Today.Year} https://polaryx.de/";
         Console.CursorVisible = false;
         
-        if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-        {
-            _windowsConsoleEventHandler += OnConsoleEvent;
-            NativeMethods.SetConsoleCtrlHandler(_windowsConsoleEventHandler, true);
-        }
-        else
-        {
-            Console.CancelKeyPress += OnConsoleCancelKeyPressed!;
-        }
+        _windowsConsoleEventHandler += OnConsoleEvent;
+        NativeMethods.SetConsoleCtrlHandler(_windowsConsoleEventHandler, true);
         
         Console.WriteLine("Loading Server Configuration...");
         var config = TryLoadConfig();

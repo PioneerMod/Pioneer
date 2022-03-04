@@ -26,6 +26,7 @@ public static class PacketRegistry
     public static void Initialize()
     {
         Register<EchoPacket>(); // Test Packet
+        Register<KeepAlivePacket>();
         Register<RequestAuthPacket>();
         Register<AuthFinishPacket>();
     }

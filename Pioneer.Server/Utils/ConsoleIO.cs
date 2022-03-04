@@ -194,10 +194,11 @@ public static class ConsoleIO
                 lock (io_lock)
                 {
                     // Update server stats on console
-                    var oldPos = Console.GetCursorPosition();
+                    var oldPosTop = Console.CursorTop;
+                    var oldPosLeft = Console.CursorLeft;
                     var curWidth = Console.WindowWidth;
                     var curHeight = Console.WindowHeight;
-                    var topLine = Math.Max(oldPos.Top - curHeight, 0) + 1;
+                    var topLine = Math.Max(oldPosTop - curHeight, 0) + 1;
                     var lineHorzOffset = curWidth - text.Length - 1;
 
                     Console.SetCursorPosition(lineHorzOffset, topLine);
@@ -206,7 +207,7 @@ public static class ConsoleIO
                     Console.SetCursorPosition(lineHorzOffset, topLine);
                     Console.Write(text);
 
-                    Console.SetCursorPosition(oldPos.Left, oldPos.Top);
+                    Console.SetCursorPosition(oldPosLeft, oldPosTop);
                 }
             }
             catch (Exception)

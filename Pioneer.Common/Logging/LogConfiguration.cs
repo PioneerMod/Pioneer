@@ -1,4 +1,6 @@
-﻿namespace Pioneer.Common.Logging;
+﻿using System;
+
+namespace Pioneer.Common.Logging;
 
 /// <summary>
 /// The log sink allows specific configurations of the logger where the log message is being put to.

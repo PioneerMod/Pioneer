@@ -1,5 +1,6 @@
-﻿using System.Reflection;
-using Microsoft.VisualBasic;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 
 namespace Pioneer.Common.Commands;
 
@@ -36,7 +37,7 @@ internal class CommandChain
                 return $"<{paramName}{(parameter.IsOptional ? "?" : "")}>";
             }).Join(" ");
             if (!string.IsNullOrEmpty(paramNames)) name += " " + paramNames;
-            paramsUsage = Strings.Join(paramUsages, "\n");
+            paramsUsage = string.Join("\n", paramUsages);
         }
         
         return name + " - " + command.Meta.Description + (string.IsNullOrEmpty(paramsUsage?.Trim()) ? "" : "\n" + paramsUsage);

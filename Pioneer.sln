@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pioneer.Common", "Pioneer.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pioneer.Client.Test", "Pioneer.Client.Test\Pioneer.Client.Test.csproj", "{D0EEE4A4-B64F-46E6-8CC1-455D1402FF05}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pioneer", "Pioneer\Pioneer.csproj", "{7FD90563-8661-4DEA-987D-3BF7E264E598}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{D0EEE4A4-B64F-46E6-8CC1-455D1402FF05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0EEE4A4-B64F-46E6-8CC1-455D1402FF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0EEE4A4-B64F-46E6-8CC1-455D1402FF05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FD90563-8661-4DEA-987D-3BF7E264E598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FD90563-8661-4DEA-987D-3BF7E264E598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FD90563-8661-4DEA-987D-3BF7E264E598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FD90563-8661-4DEA-987D-3BF7E264E598}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

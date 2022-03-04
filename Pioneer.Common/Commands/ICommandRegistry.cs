@@ -1,4 +1,7 @@
-﻿namespace Pioneer.Common.Commands;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace Pioneer.Common.Commands;
 
 /// <summary>
 /// The command registry manages all commands (wow what a miracle).
@@ -32,12 +35,4 @@ public interface ICommandRegistry
     /// </summary>
     /// <param name="line">The line to process.</param>
     Task<bool> ProcessAsync(string line);
-
-    /// <summary>
-    /// Creates a new registry and returns it (it won't be cached internally).
-    /// </summary>
-    public static ICommandRegistry Create()
-    {
-        return new CommandRegistry();
-    }
 }

@@ -1,4 +1,7 @@
-﻿namespace Pioneer.Common.Logging;
+﻿using System;
+using System.IO;
+
+namespace Pioneer.Common.Logging;
 
 /// <summary>
 /// The logger factory is the entry point for any logger. From here specific things are being managed

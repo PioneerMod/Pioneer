@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Pioneer.Common;
 
@@ -191,9 +192,9 @@ public static class Extensions
     /// <param name="list">The list to be checked</param>
     /// <param name="delimiter">The delimiter which merges the strings</param>
     /// <returns>The list containing all fitting elements</returns>
-    public static string? Join(this List<string> list, string delimiter)
+    public static string Join(this List<string> list, string delimiter)
     {
-        return Strings.Join(list.ToArray(), delimiter);
+        return string.Join(delimiter, list.ToArray());
     }
 
     /// <summary>

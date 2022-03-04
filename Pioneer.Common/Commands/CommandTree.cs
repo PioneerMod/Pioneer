@@ -1,4 +1,8 @@
-﻿namespace Pioneer.Common.Commands;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Pioneer.Common.Commands;
 
 /// <summary>
 /// The command tree defines the main component of the internal command framework. A command tree is one command

@@ -1,4 +1,6 @@
-﻿namespace Pioneer.Common.Logging;
+﻿using System;
+
+namespace Pioneer.Common.Logging;
 
 /// <summary>
 /// The logger is a tool to log messages to the console and the log file system of Pioneer.

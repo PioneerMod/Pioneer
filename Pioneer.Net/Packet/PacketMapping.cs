@@ -1,6 +1,5 @@
 ﻿using System.Reflection;
 using DotNetty.Buffers;
-using SpanJson;
 using static Pioneer.Common.Commands.Converters.BasicConverter;
 
 namespace Pioneer.Net.Packet;
@@ -49,9 +48,8 @@ internal class PacketMapping
                 {
                     if (shouldSerialize)
                     {
-                        var data = JsonSerializer.NonGeneric.Utf8.Serialize(val);
-                        buffer.WriteInt(data.Length);
-                        buffer.WriteBytes(data);
+                        var data = NetJSON.NetJSON.Serialize(val);
+                        buffer.WriteStringUTF8(data);
                     }
                     else
                     {
@@ -61,18 +59,9 @@ internal class PacketMapping
             });
             mapping._deserialization.AddLast((buffer, obj) =>
             {
-                object? val;
-                if (shouldSerialize)
-                {
-                    var length = buffer.ReadInt();
-                    var bytes = new byte[length];
-                    buffer.ReadBytes(bytes);
-                    val = JsonSerializer.NonGeneric.Utf8.Deserialize(bytes, field.PropertyType);
-                }
-                else
-                {
-                    val = ReadBufferForType(buffer, field.PropertyType);
-                }
+                var val = shouldSerialize
+                    ? NetJSON.NetJSON.Deserialize(field.PropertyType, buffer.ReadStringUTF8())
+                    : ReadBufferForType(buffer, field.PropertyType);
                 if (val != null)
                 {
                     SetObjectValue(field, obj, val);

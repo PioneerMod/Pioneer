@@ -1,4 +1,6 @@
-﻿namespace Pioneer.Common.Commands.Converters;
+﻿using System;
+
+namespace Pioneer.Common.Commands.Converters;
 
 public static class BasicConverter
 {
