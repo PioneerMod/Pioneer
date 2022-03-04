@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pioneer.Server", "Pioneer.Server\Pioneer.Server.csproj", "{8836DC04-28CA-4105-9FB4-A2ACBF2FE7C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pioneer.Net", "Pioneer.Net\Pioneer.Net.csproj", "{865BA34B-CCE3-48C2-BFA8-3540FBD14D08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pioneer.Common", "Pioneer.Common\Pioneer.Common.csproj", "{81D0B12B-350E-4676-B9BE-99D87817C492}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pioneer.Client.Test", "Pioneer.Client.Test\Pioneer.Client.Test.csproj", "{D0EEE4A4-B64F-46E6-8CC1-455D1402FF05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8836DC04-28CA-4105-9FB4-A2ACBF2FE7C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8836DC04-28CA-4105-9FB4-A2ACBF2FE7C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8836DC04-28CA-4105-9FB4-A2ACBF2FE7C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8836DC04-28CA-4105-9FB4-A2ACBF2FE7C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{865BA34B-CCE3-48C2-BFA8-3540FBD14D08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{865BA34B-CCE3-48C2-BFA8-3540FBD14D08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{865BA34B-CCE3-48C2-BFA8-3540FBD14D08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{865BA34B-CCE3-48C2-BFA8-3540FBD14D08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81D0B12B-350E-4676-B9BE-99D87817C492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81D0B12B-350E-4676-B9BE-99D87817C492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81D0B12B-350E-4676-B9BE-99D87817C492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81D0B12B-350E-4676-B9BE-99D87817C492}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0EEE4A4-B64F-46E6-8CC1-455D1402FF05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0EEE4A4-B64F-46E6-8CC1-455D1402FF05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0EEE4A4-B64F-46E6-8CC1-455D1402FF05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0EEE4A4-B64F-46E6-8CC1-455D1402FF05}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
