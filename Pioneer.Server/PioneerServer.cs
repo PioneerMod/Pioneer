@@ -3,6 +3,7 @@ using Pioneer.Common.Logging;
 using Pioneer.Net;
 using Pioneer.Net.Packet;
 using Pioneer.Net.Protocol;
+using Pioneer.Net.Protocol.Client;
 using Pioneer.Server.Configuration;
 
 namespace Pioneer.Server;
@@ -23,6 +24,7 @@ internal class PioneerServer
 
     internal PioneerServer(ILogger logger, Config config)
     {
+        var o = new RequestAuthPacket();
         Instance = this;
         Logger = logger;
         Config = config;

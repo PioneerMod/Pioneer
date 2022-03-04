@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Collections.Concurrent;
+using System.Reflection;
 using System.Text;
 using DotNetty.Buffers;
 using Pioneer.Net.Protocol;
@@ -14,6 +15,7 @@ namespace Pioneer.Net.Packet;
 /// </summary>
 public static class PacketRegistry
 {
+    internal static readonly ConcurrentDictionary<Type, PacketMapping> Mappings = new();
     private static readonly Dictionary<int, Type> PacketIdToType = new();
     private static readonly Dictionary<Type, int> TypeToPacketId = new();
 
@@ -44,7 +46,12 @@ public static class PacketRegistry
         if (PacketIdToType.ContainsKey(packetId.Value))
             throw new NotSupportedException(
                 $"Same PacketId used twice: {PacketIdToType[packetId.Value].FullName} and {type.FullName}");
-        
+
+        if (typeof(MappedPacket).IsAssignableFrom(type))
+        {
+            GenerateMapping(type);
+        }
+
         PacketIdToType.Add(packetId.Value, type);
         TypeToPacketId.Add(type, packetId.Value);
     }
@@ -91,5 +98,11 @@ public static class PacketRegistry
         var bytes = new byte[length];
         buffer.ReadBytes(bytes);
         return Encoding.UTF8.GetString(bytes);
+    }
+    
+    private static void GenerateMapping(Type packetType)
+    {
+        var mapping = PacketMapping.Generate(packetType);
+        Mappings.TryAdd(packetType, mapping);
     }
 }
